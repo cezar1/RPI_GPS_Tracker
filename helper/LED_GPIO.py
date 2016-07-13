@@ -18,6 +18,6 @@ GPIO.setwarnings(False)
 GPIO.setup(number,GPIO.OUT)
 print "LED on"
 GPIO.output(number,GPIO.HIGH)
-time.sleep(1)
+time.sleep(0.2)
 print "LED off"
 GPIO.output(number,GPIO.LOW)

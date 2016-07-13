@@ -37,13 +37,13 @@ tmux send-keys "cd ~/stills" C-m
 tmux send-keys "watch -n 10 du -h" C-m
 
 tmux new-window -t $SESSION:6 -n 'LEDs'
-tmux send-keys "cd repos/RPI_GPS_Tracker/helper" C-m
+tmux send-keys "cd helper" C-m
 tmux send-keys "./switchLEDs.sh" C-m
 
 
 # Set default window
 tmux select-window -t $SESSION:0
-tmux send-keys "glances" C-m
+tmux send-keys "top" C-m
 
 fi
 # Attach to session
