@@ -40,6 +40,9 @@ tmux new-window -t $SESSION:6 -n 'LEDs'
 tmux send-keys "cd helper" C-m
 tmux send-keys "./switchLEDs.sh" C-m
 
+tmux new-window -t $SESSION:7 -n 'SCREEN'
+tmux send-keys "cd helper" C-m
+tmux send-keys "python SCREEN_LISTENER_GPIO.py 23" C-m
 
 # Set default window
 tmux select-window -t $SESSION:0
