@@ -1,0 +1,6 @@
+#Put this file in ~/.config/autostart/
+[Desktop Entry]
+Encoding=UTF-8
+Name=Terminal autostart
+Comment=Start a terminal and list directory
+Exec=/usr/bin/lxterm -e '/home/pi/repos/RPI_GPS_Tracker/tmuxInteractive1.sh'
