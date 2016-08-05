@@ -17,8 +17,7 @@ tmux send-keys "cd ~/repos/Adafruit_Python_BNO055/examples" C-m
 tmux send-keys "sudo python simpletest.py" C-m
 
 tmux new-window -t $SESSION:3 -n 'GPS'
-tmux send-keys "sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock" C-m
-tmux send-keys "cgps -s" C-m
+tmux send-keys "sleep 30; sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock; sleep 5; cgps -s" C-m
 
 tmux new-window -t $SESSION:4 -n 'Uptime'
 tmux split-window -h
@@ -42,9 +41,17 @@ tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
 tmux send-keys "cd helper" C-m
 tmux send-keys "python SCREEN_LISTENER_GPIO.py 23" C-m
 
+tmux new-window -t $SESSION:8 -n 'GPS_SYNC'
+tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
+tmux send-keys "cd helper" C-m
+tmux send-keys "echo gps_sync.sh" C-m
+
+
 # Set default window
 tmux select-window -t $SESSION:0
 tmux send-keys "top" C-m
+
+tmux select-window -t $SESSION:3
 
 fi
 # Attach to session

@@ -19,6 +19,7 @@ if number==23 or number==24:
         		print('Button Pressed')
 			os.system('bash helper/takePicture2.sh')		
         		time.sleep(0.1)
+		time.sleep(0.2)
 else:
 	print "Must use 23,24 as argument"
 	sys.exit()

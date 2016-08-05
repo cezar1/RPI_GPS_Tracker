@@ -21,6 +21,7 @@ if number==23 or number==24:
 			print('Mode is now ['+str(mode)+']')
 			os.system('bash SWITCH_SCREEN.sh '+str(int(mode==True)))		
         		time.sleep(0.2)
+		time.sleep(0.2)
 else:
 	print "Must use 23,24 as argument"
 	sys.exit()
