@@ -17,7 +17,7 @@ tmux send-keys "cd ~/repos/Adafruit_Python_BNO055/examples" C-m
 tmux send-keys "sudo python simpletest.py" C-m
 
 tmux new-window -t $SESSION:3 -n 'GPS'
-tmux send-keys "sleep 30; sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock; sleep 5; cgps -s" C-m
+tmux send-keys "sleep 30; sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock; sleep 30; GPSD_UNITS=metric cgps -s" C-m
 
 tmux new-window -t $SESSION:4 -n 'Uptime'
 tmux split-window -h
