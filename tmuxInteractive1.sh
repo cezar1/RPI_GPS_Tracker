@@ -46,12 +46,14 @@ tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
 tmux send-keys "cd helper" C-m
 tmux send-keys "echo gps_sync.sh" C-m
 
+tmux new-window -t $SESSION:9 -n 'DETACH'
 
 # Set default window
 tmux select-window -t $SESSION:0
 tmux send-keys "top" C-m
 
-tmux select-window -t $SESSION:3
+tmux select-window -t $SESSION:9
+tmux send-keys "tmux detach" C-m
 
 fi
 # Attach to session
