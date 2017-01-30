@@ -27,9 +27,13 @@ tmux select-pane -t 1
 tmux send-keys "tail -f uptime.log" C-m
 
 tmux new-window -t $SESSION:5 -n 'Camera'
+tmux split-window -h
 tmux select-pane -t 0
 tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
 tmux send-keys "python helper/CAMERA_LISTENER_GPIO.py 24" C-m
+tmux select-pane -t 1
+tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
+tmux send-keys "python helper/TAKE_CONTINUOUS.py" C-m
 
 tmux new-window -t $SESSION:6 -n 'LEDs'
 tmux send-keys "cd ~/repos/RPI_GPS_Tracker" C-m
